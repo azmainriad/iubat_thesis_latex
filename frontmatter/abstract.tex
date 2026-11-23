@@ -1,0 +1,72 @@
+% =========================================================================
+% Abstract (Page vi) and LaTeX Setup Guide (Page vii)
+%
+% Student Guide:
+% - Page vi: replace the guidance text with your abstract (500 words at most)
+%   and 4 to 6 keywords.
+% - Page vii (Part 2 below): a LaTeX setup guide for your reference.
+%   Delete it when you write your thesis.
+% =========================================================================
+
+\clearpage
+\phantomsection
+\addcontentsline{toc}{chapter}{Abstract}
+
+\begin{center}
+  {\fontsize{14pt}{18pt}\selectfont\bfseries Abstract\par}
+  \vspace{12pt}
+\end{center}
+
+Your thesis abstract must be limited to 500 words and should serve as a concise yet comprehensive summary of your entire work, capturing the motivation, problem, approach, results, and conclusion in a clear flow. Although brief, the abstract must accomplish almost as much as the full thesis, so ensure all essential components are included: first, highlight the motivation by explaining the importance of your work, the difficulty of the area, and the potential impact if successful; second, present the problem statement by clearly identifying the issue you are addressing and defining the scope of your work, whether generalized or specific, noting that in some cases the problem may precede the motivation if its importance is already understood; third, describe your approach by summarizing how your proposal solves or makes progress on the problem, mentioning whether you used simulations, analytic models, prototype construction, or field data analysis; fourth, present your results effectively to demonstrate how your proposal performs better---whether faster, smaller, cheaper, or more efficient than existing solutions; and finally, conclude by stating the implications of your research and reinforcing its significance in advancing knowledge or solving real-world problems. Write in formal, precise language, avoid unnecessary jargon, and ensure the abstract stands alone as a self-contained representation of your thesis.
+
+\vspace{14pt}
+\noindent
+\textbf{Keywords:} Write 4 to 6 representative keywords separated by commas (e.g., Machine Learning, Edge Computing, Natural Language Processing).
+
+\clearpage
+
+% -------------------------------------------------------------------------
+% Part 2: LaTeX setup and workflow guide (Page vii)
+% Remove Part 2 (everything below) when you write your thesis.
+% -------------------------------------------------------------------------
+\begin{onehalfspace}
+\begin{center}
+  {\fontsize{13pt}{16pt}\selectfont\bfseries \LaTeX{} Environment Setup and Installation Guide\par}
+  \vspace{6pt}
+\end{center}
+
+\noindent
+To ensure seamless preparation of this thesis according to departmental formatting standards, students are guided through the recommended \LaTeX{} setup and software distributions below:
+
+\vspace{4pt}
+\noindent
+\textbf{1. Recommended Desktop Distribution and Editor (Cross-Platform):}
+\begin{itemize}[leftmargin=*,noitemsep,topsep=2pt,parsep=1pt]
+  \item \textbf{Windows:} Download and install the \textbf{MiKTeX} distribution (\url{https://miktex.org/download}) or TeX Live (\url{https://www.tug.org/texlive/}), paired with the \textbf{TeXstudio} IDE (\url{https://www.texstudio.org/}). MiKTeX automatically downloads missing packages on demand.
+  \item \textbf{macOS:} Download and install the \textbf{MacTeX} distribution suite (\url{https://www.tug.org/mactex/}), which includes full TeX binaries, paired with the \textbf{TeXstudio} editor (\url{https://www.texstudio.org/}).
+  \item \textbf{Linux (Ubuntu/Debian/Fedora):} Install \textbf{TeX Live} and \textbf{TeXstudio} via package manager (\texttt{sudo apt install texlive-full texstudio}) or from \url{https://www.tug.org/texlive/} and \url{https://www.texstudio.org/}.
+\end{itemize}
+
+\vspace{4pt}
+\noindent
+\textbf{2. Online Cloud Alternative (Overleaf):}
+\begin{itemize}[leftmargin=*,noitemsep,topsep=2pt]
+  \item Alternatively, students may use \textbf{Overleaf} (\url{https://www.overleaf.com/}) directly in their web browser without local installation. Create an account, choose \textit{New Project $\to$ Upload Project}, and upload this thesis template folder as a ZIP archive.
+\end{itemize}
+
+\vspace{4pt}
+\noindent
+\textbf{3. Compilation Recommendation and Best Practice:}
+\begin{itemize}[leftmargin=*,noitemsep,topsep=2pt]
+  \item Although Overleaf is convenient for online access, it is \textbf{strongly recommended to use a local installation of TeXstudio with MiKTeX or TeX Live} to edit and render your thesis. Local compilation provides significantly faster rendering, full offline access, complete package flexibility, and prevents cloud compilation timeout errors when handling high-resolution graphics and extensive bibliographies.
+\end{itemize}
+
+\vspace{4pt}
+\noindent
+\textbf{4. Quick Compilation Steps in TeXstudio:}
+\begin{enumerate}[leftmargin=*,noitemsep,topsep=2pt]
+  \item Open the master document \texttt{main.tex} in TeXstudio.
+  \item Ensure the default compiler is set to \textbf{pdfLaTeX} under \textit{Options $\to$ Configure TeXstudio $\to$ Build}.
+  \item Press \textbf{F5} (\textit{Build and View}) to compile. For citations in \texttt{references.bib}, run: \textit{pdfLaTeX $\to$ BibTeX (F8) $\to$ pdfLaTeX $\to$ pdfLaTeX}.
+\end{enumerate}
+\end{onehalfspace}

@@ -1,0 +1,145 @@
+% =========================================================================
+% Chapter 3: Research Methodology
+%
+% Student Guide:
+% - Explains how you did the work: your system, methods and experiments.
+% - Read the 10 parts of a methodology listed below.
+% - Sections 3.1 and 3.2 show how to add figures and tables.
+% - Put images in the 'figures/' folder and insert them with \includegraphics.
+% =========================================================================
+
+\chapter{Research Methodology}
+\label{ch:methodology}
+
+The methodology section follows immediately after the literature review in your thesis report and should flow naturally from it. By this stage, you will have defined your research question and conducted a detailed review of existing scholarship on your topic. You will also have examined how other scholars arrived at their conclusions, the assumptions underlying their work, the theoretical frameworks they employed, and the methods they used to collect, organize, and present their data. Drawing on these observations, as well as discussions with your supervisor, you will have planned how to address your own research question. This may involve determining how you will gather data, identifying the models you will use to process it, or clarifying the philosophical positions that inform your work. Your methodology section should therefore provide a detailed account of both how you intend to approach your dissertation and why you have chosen this particular approach.
+
+The methodology section may include the following components: Recap of research questions, Description of design or method, Background and rationale for design choice, Evaluation of method and statement of limitations, Data sources and materials, Sampling and participants (if applicable), Ethical considerations, Procedures and workflow, Data analysis techniques, and Validity and reliability (or trustworthiness in qualitative research). Details of these components are discussed below:
+
+\begin{enumerate}
+  \item \textbf{Recap of Research Questions}\par
+  When introducing your methodology, begin by revisiting the central research problem or questions you posed at the outset. The methodology should be designed to address these directly. Rather than repeating the questions verbatim, reframe them in a way that connects your literature review to the methodological choices you are about to present. This creates a logical bridge between what has been established in prior studies and how your approach will generate answers.
+
+  \item \textbf{Description of Design or Method}\par
+  Provide a clear and detailed account of the process you followed to gather and analyze data, or to address your research question \cite{creswell2018}, \cite{yin2018}. Ensure transparency so that another scholar could understand, evaluate, and replicate your approach in a different context.
+
+  \item \textbf{Background and Rationale for Design Choice}\par
+  Justify why you selected this method. Ground your rationale in the literature review, showing that your choice is informed by established scholarship while also reflecting originality. Explicitly connect the rationale to your research problem, demonstrating that the methodology is a tailored response to the questions you aim to answer.
+
+  \item \textbf{Evaluation of Method and Statement of Limitations}\par
+  Critically assess the strengths and weaknesses of your chosen approach. Acknowledge trade-offs honestly but without apology, and justify why the method remains the most appropriate for your study despite its limitations.
+
+  \item \textbf{Data Sources and Materials}\par
+  Specify the datasets, documents, tools, or instruments used. This ensures transparency and reproducibility.
+
+  \item \textbf{Sampling and Participants (if applicable)}\par
+  Describe how participants or cases were selected, including inclusion/exclusion criteria. This adds credibility to qualitative or quantitative studies.
+
+  \item \textbf{Ethical Considerations}\par
+  Outline how you addressed consent, confidentiality, and compliance with institutional or disciplinary ethics standards \cite{bera2018}, \cite{apa2017}. This section is often mandatory.
+
+  \item \textbf{Procedures and Workflow}\par
+  Provide a step-by-step account of how the research was conducted (e.g., experiment setup, survey distribution, simulation runs, etc.). This helps readers follow your process clearly.
+
+  \item \textbf{Data Analysis Techniques}\par
+  Explain the statistical, computational, or qualitative methods used to interpret the data. Show alignment between your research questions and the chosen analytical tools.
+
+  \item \textbf{Validity and Reliability (or Trustworthiness in qualitative research)}\par
+  Discuss how you ensured accuracy, consistency, and robustness of your findings. This strengthens the credibility of your methodology.
+\end{enumerate}
+
+The rest of this chapter shows how to use this template to prepare the figures and tables in your thesis report.
+
+\section{Figures}
+\label{sec:figures}
+
+To insert a figure in \LaTeX{}, use the standard \texttt{figure} environment with \texttt{\textbackslash centering}, \texttt{\textbackslash includegraphics}, \texttt{\textbackslash caption}, and \texttt{\textbackslash label}. This ensures that figures remain properly centered, numbered sequentially, and automatically registered into the List of Figures.
+
+For Example: The box shown below is a placeholder to demonstrate how the figure should appear.
+
+% -------------------------------------------------------------------------
+% Figure 3.1 (example)
+% The framed box is only a placeholder. Replace it with
+% \includegraphics[width=0.8\textwidth]{figures/your-image.png}
+% -------------------------------------------------------------------------
+\begin{figure}[htbp]
+  \centering
+  \fbox{%
+    \parbox[c][1.4in][c]{0.8\textwidth}{%
+      \centering\bfseries [ Placeholder for Figure 3.1 Graphic ]
+    }%
+  }
+  \caption{Example Figure Title.}
+  \label{fig:example-figure-1}
+\end{figure}
+
+Place the figure 3.1 description here (e.g., explaining the experimental setup, system architecture, or process diagram shown in the figure).
+
+\subsection{Figure Style}
+\label{sec:figure-style}
+
+The \texttt{\textbackslash caption\{...\}} command is used to name a figure in a way that will appear in the List of Figures. The title, along with its page number, will automatically be added to the List of Figures when you compile your document.
+
+\subsection{Figure Description Style}
+\label{sec:figure-desc-style}
+
+Following the figure caption, explanatory narrative should be placed directly as standard body text immediately beneath the figure.
+
+% -------------------------------------------------------------------------
+% Figure 3.2 (example)
+% -------------------------------------------------------------------------
+\begin{figure}[htbp]
+  \centering
+  \fbox{%
+    \parbox[c][1.4in][c]{0.8\textwidth}{%
+      \centering\bfseries [ Placeholder for Figure 3.2 Graphic ]
+    }%
+  }
+  \caption{Example Figure Title2.}
+  \label{fig:example-figure-2}
+\end{figure}
+
+Place the figure 3.2 description here. Figures should always be cross-referenced within the text (e.g., as illustrated in Figure~\ref{fig:example-figure-1} and Figure~\ref{fig:example-figure-2}).
+
+\section{Tables}
+\label{sec:tables}
+
+In LaTeX, tables are created using the \texttt{table} floating environment along with tabular environments such as \texttt{tabular}, \texttt{tabularx}, or \texttt{xltabular}. Standard publication practice recommends using the \texttt{booktabs} package (\texttt{\textbackslash toprule}, \texttt{\textbackslash midrule}, and \texttt{\textbackslash bottomrule}) without vertical lines.
+
+\subsection{Table Title Style}
+\label{sec:table-title-style}
+
+The \texttt{\textbackslash caption\{...\}} command should be applied immediately before the table itself. This ensures the title is properly formatted above the table and included in the List of Tables.
+
+\subsection{Table Cell Style}
+\label{sec:table-cell-style}
+
+Text inside the table cells can be aligned left (\texttt{l}), centered (\texttt{c}), or right (\texttt{r}). For multi-line text cells, use \texttt{p\{width\}} or the flexible \texttt{X} column from \texttt{tabularx}.
+
+\subsection{Table Description Style}
+\label{sec:table-desc-style}
+
+A brief description of the table may be placed immediately following the table.
+
+A sample table with description style is shown below:
+
+% -------------------------------------------------------------------------
+% Table 3.1 (example)
+% A short table kept in one piece. For a long table that may need to
+% continue on the next page, use xltabular as in Table 2.1.
+% -------------------------------------------------------------------------
+\begin{table}[htbp]
+  \centering
+  \caption{Table Title.}
+  \label{tab:sample-process-table}
+  \begin{tabular}{ccc}
+    \toprule
+    \textbf{Process} & \textbf{Arrival Time} & \textbf{Service time} \\
+    \midrule
+    A & 0 & 4 \\
+    \midrule
+    B & 3 & 5 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+Place the description for Table 3.1 here (e.g., Table~\ref{tab:sample-process-table} shows the arrival time and service time for process A and process B).

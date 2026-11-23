@@ -1,0 +1,124 @@
+% =========================================================================
+% main.tex - the master file of your thesis
+%
+% Student Guide:
+% - Compile THIS file to build the whole thesis
+%   (in TeXstudio: open main.tex and press F5).
+% - Type your title, names, IDs and supervisors in 'thesis-config.tex'.
+% - Every page and chapter has its own file in 'frontmatter/', 'chapters/'
+%   and 'appendices/'. This file only puts them in order.
+% =========================================================================
+
+\documentclass[12pt,a4paper,oneside]{report}
+
+% Load the settings, packages and shortcuts from thesis-config.tex
+\input{thesis-config.tex}
+
+\begin{document}
+
+% -------------------------------------------------------------------------
+% Front pages (numbered with roman numerals: i, ii, iii, ...)
+% -------------------------------------------------------------------------
+
+% 1. Title page (cover)
+\input{frontmatter/title-page.tex}
+
+% From here the pages use roman numerals. The cover counts as page i,
+% so the next page is ii.
+\clearpage
+\pagenumbering{roman}
+\setcounter{page}{2}
+
+% 2. Certificate of Approval
+\input{frontmatter/approval.tex}
+
+% 3. Letter of Transmittal
+\input{frontmatter/transmittal.tex}
+
+% 4. Student's Declaration
+\input{frontmatter/declaration.tex}
+
+% 5. Supervisor's Certification
+\input{frontmatter/certification.tex}
+
+% 6. Abstract and LaTeX setup guide
+\input{frontmatter/abstract.tex}
+
+% 7. Acknowledgments
+\input{frontmatter/acknowledgement.tex}
+
+% 8. Table of Contents
+\clearpage
+\phantomsection
+\addcontentsline{toc}{chapter}{\contentsname}
+\tableofcontents
+
+% 9. List of Figures
+\clearpage
+\phantomsection
+\addcontentsline{toc}{chapter}{\listfigurename}
+\listoffigures
+
+% 10. List of Tables
+\clearpage
+\phantomsection
+\addcontentsline{toc}{chapter}{\listtablename}
+\listoftables
+
+% -------------------------------------------------------------------------
+% Main chapters (numbered 1, 2, 3, ...)
+% -------------------------------------------------------------------------
+\clearpage
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+% From here the body text uses the departmental spacing set in
+% 'thesis-config.tex' (27.5 pt between lines, 21.5 pt paragraph indent, as in
+% the Word template). The front pages above keep their own spacing.
+\bodytextmetrics
+
+% Chapter 1: Introduction
+\input{chapters/chapter1-intro.tex}
+
+% Chapter 2: Literature Review
+\input{chapters/chapter2-lit-review.tex}
+
+% Chapter 3: Research Methodology
+\input{chapters/chapter3-methodology.tex}
+
+% Chapter 4: Results and Discussion
+\input{chapters/chapter4-results.tex}
+
+% Chapter 5: Conclusion and Future Work
+\input{chapters/chapter5-conclusion.tex}
+
+% -------------------------------------------------------------------------
+% References (IEEE style)
+% -------------------------------------------------------------------------
+\clearpage
+\phantomsection
+\addcontentsline{toc}{chapter}{References}
+% The heading text "References" is set in 'thesis-config.tex'.
+% Only sources you \cite{} in the text appear in this list.
+% Do NOT add \nocite{*}: it would print every entry of 'references.bib'.
+\bibliographystyle{IEEEtran}
+\bibliography{references}
+
+% -------------------------------------------------------------------------
+% Appendices (official departmental forms)
+% -------------------------------------------------------------------------
+\appendix
+% Headings now read 'Appendix A.' and 'Appendix B.' instead of 'Chapter 1.'
+\titleformat{\chapter}[block]
+  {\normalfont\fontsize{14pt}{18pt}\selectfont\bfseries\centering}
+  {Appendix \thechapter.\ }{0pt}{}
+\addtocontents{toc}{\protect\renewcommand{\protect\cftchappresnum}{Appendix }}
+\addtocontents{toc}{\protect\setlength{\protect\cftchapnumwidth}{6.8em}}
+
+% Appendix A: BAETE KPA Justification Form
+\input{appendices/appendix-kpa.tex}
+
+% Appendix B: Plagiarism report
+\input{appendices/appendix-plagiarism.tex}
+
+\end{document}

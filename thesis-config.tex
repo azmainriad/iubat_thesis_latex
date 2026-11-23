@@ -1,0 +1,288 @@
+% =========================================================================
+% thesis-config.tex - the file you edit on day one
+%
+% Student Guide:
+% - Section 1 holds your thesis title, names, IDs, supervisors and semester.
+%   Change the text inside the SECOND pair of braces only.
+% - Every page (cover, approval, declaration, headers, forms) reads these
+%   values, so you type each fact only once.
+% - Sections 2 to 9 control the layout. Leave them alone.
+% =========================================================================
+
+% -------------------------------------------------------------------------
+% 1. Your details (edit this section)
+% -------------------------------------------------------------------------
+\newcommand{\thesisTitle}{Write Your Thesis Title Here And Replace All Instructional Text With Your Actual Thesis Content After Reading The Instructions.}
+\newcommand{\thesisSubtitle}{A Thesis in the Partial Fulfillment of the Requirements\\ for the Award of Bachelor of Computer Science and Engineering (BCSE)}
+
+% Authors.
+% Working alone? Make \authorB and \authorBID empty, like this:
+%   \newcommand{\authorB}{}
+%   \newcommand{\authorBID}{}
+% Appendix A then shows one student by itself. The pages in 'frontmatter/'
+% need a few small edits: see 'Thesis-Writing-Manual.pdf', section
+% "Writing a Single-Author Thesis".
+\newcommand{\authorA}{First Author}
+\newcommand{\authorAID}{Student ID 1}
+\newcommand{\authorB}{Second Author}
+\newcommand{\authorBID}{Student ID 2}
+
+% \ifsecondauthor{<text for two authors>}{<text for one author>}
+% (used by Appendix A; do not edit)
+\usepackage{etoolbox}
+\newcommand{\ifsecondauthor}[2]{\ifdefempty{\authorB}{#2}{#1}}
+
+% Supervisors and department leaders
+\newcommand{\supervisorName}{Supervisor Name}
+\newcommand{\supervisorDesignation}{Supervisor and Designation of the Supervisor}
+\newcommand{\coSupervisorName}{Dr. Md. Rashedul Islam}
+\newcommand{\coSupervisorDesignation}{Co-supervisor, Coordinator and Associate Professor}
+\newcommand{\deanChairName}{Prof. Dr. Utpal Kanti Das}
+\newcommand{\deanChairDesignation}{Dean and Chair}
+
+% Institution details
+\newcommand{\deptName}{Department of Computer Science and Engineering}
+\newcommand{\schoolName}{IUBAT School of Computer Science and Engineering}
+\newcommand{\univName}{IUBAT---International University of Business Agriculture and Technology}
+\newcommand{\univAddress}{4 Embankment Drive Road, Sector 10, Uttara Model Town, Dhaka 1230, Bangladesh}
+\newcommand{\submissionSemester}{Spring 2026}
+\newcommand{\courseCodeTitle}{CSC 4000: Write Course Code and Title Here}
+
+% -------------------------------------------------------------------------
+% 2. Page size and margins (IUBAT thesis layout)
+% Left margin 1.25 in (room for binding); top, bottom and right 1 in.
+% -------------------------------------------------------------------------
+\usepackage[
+  a4paper,
+  left=1.25in,
+  right=1.0in,
+  top=1.0in,
+  bottom=1.0in,
+  headheight=0.25in,
+  headsep=0.3in,
+  footskip=0.5in
+]{geometry}
+
+% -------------------------------------------------------------------------
+% 3. Text and line spacing
+% The front pages use LaTeX's normal double spacing. The main body
+% (Chapter 1 onwards) switches to \bodytextmetrics below, which copies the
+% departmental Word template:
+%   * 27.5 pt from one line to the next (Word's "Double" for 12 pt text)
+%   * 21.5 pt indent at the start of each paragraph (about 0.3 in)
+% LaTeX's own \doublespacing is only about 24 pt, so the stretch factor
+% below is set by hand.
+% -------------------------------------------------------------------------
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{setspace}
+\doublespacing
+
+\usepackage{indentfirst}
+\setlength{\parindent}{0.5in}
+\setlength{\parskip}{0pt}
+
+% Sizes here are in 'bp' (1/72 in), the unit PDF files are measured in.
+% LaTeX's own 'pt' is slightly smaller, so 27.5pt would measure only 27.4
+% in the PDF, while 27.5bp measures exactly 27.5.
+% To change the body spacing, edit these two numbers.
+\newcommand{\bodyStretchFactor}{1.90366}  % 14.5pt baseline -> 27.50bp pitch
+\newcommand{\bodyTextIndent}{21.5bp}
+
+% Turns on the body spacing and the Word-style list layout (list text
+% 0.5 in from the margin, roman numerals in front, 6 pt between numbered
+% items, no gap between bullets). main.tex calls it once, where Chapter 1
+% begins, so the front pages are not affected.
+\newcommand{\bodytextmetrics}{%
+  \setstretch{\bodyStretchFactor}%
+  \setlength{\parindent}{\bodyTextIndent}%
+  \setlist[enumerate,1]{label=\Roman*.,align=right,leftmargin=36bp,
+                        labelwidth=28bp,labelsep=8bp,
+                        topsep=0pt,partopsep=0pt,itemsep=0pt,parsep=6bp}%
+  \setlist[itemize,1]{leftmargin=36bp,labelwidth=12bp,labelsep=6bp,align=left,
+                      topsep=0pt,partopsep=0pt,itemsep=0pt,parsep=0pt}%
+  \setlist[enumerate,2]{label=\arabic*.,leftmargin=24pt,topsep=0pt,itemsep=3pt}%
+  \setlist[itemize,2]{leftmargin=24pt,topsep=0pt,itemsep=0pt}%
+}
+
+% -------------------------------------------------------------------------
+% 3b. Fixed-position blocks (used by the cover and the approval page)
+% Do not edit. Each block is a box of fixed height, so a longer or shorter
+% thesis title never moves anything else on the page.
+%   \fixedblock{height}{content}: one box. The height is a plain number in
+%       bp and is the distance down to the top of the next block.
+%   \firstlinestrut: gives a block's first line a fixed height, so its
+%       baseline always sits at the same place.
+% -------------------------------------------------------------------------
+\newcommand{\firstlinestrut}{\rule{0pt}{14bp}}
+\newcommand{\fixedblock}[2]{%
+  \vbox to #1bp{\parskip=0pt \parindent=0pt \centering #2\vfil}%
+  \nointerlineskip}
+% The thesis title (18 pt bold). #1 = height reserved for it.
+\newcommand{\fixedtitleblock}[1]{%
+  \fixedblock{#1}{\vskip-1.74bp
+    {\fontsize{18pt}{24pt}\selectfont\bfseries\noindent\firstlinestrut
+     \thesisTitle\par}}}
+% One signature: line, name, designation.
+% #1 = height of the block, #2 = name, #3 = designation.
+\newcommand{\fixedsignatureblock}[3]{%
+  \fixedblock{#1}{\noindent\vtop{\hsize=11cm \parskip=0pt \parindent=0pt \centering
+    \rule{6.5cm}{0.4pt}\par\nointerlineskip\vskip3.3bp
+    {\fontsize{12pt}{16pt}\selectfont\bfseries\noindent\firstlinestrut #2\par}
+    {\fontsize{12pt}{16pt}\selectfont\noindent #3\par}}\par}}
+
+% Lets LaTeX stretch spaces a little, so long URLs and words
+% stay inside the margins.
+\setlength{\emergencystretch}{1.5em}
+
+% -------------------------------------------------------------------------
+% 4. Header and footer (page number centered at the bottom)
+% -------------------------------------------------------------------------
+\usepackage{fancyhdr}
+\fancypagestyle{plain}{
+  \fancyhf{}
+  \renewcommand{\headrulewidth}{0pt}
+  \renewcommand{\footrulewidth}{0pt}
+  \fancyfoot[C]{\thepage}
+}
+\pagestyle{plain}
+
+% -------------------------------------------------------------------------
+% 5. Chapter and section headings
+% Chapter titles: 14 pt bold, centered.
+% Section titles: 12 pt bold, left-aligned.
+% -------------------------------------------------------------------------
+\usepackage{titlesec}
+\usepackage[normalem]{ulem}
+
+\titleformat{\chapter}[block]
+  {\normalfont\fontsize{14pt}{18pt}\selectfont\bfseries\centering}
+  {Chapter \thechapter.\ }{0pt}{}
+
+\titleformat{name=\chapter,numberless}[block]
+  {\normalfont\fontsize{14pt}{18pt}\selectfont\bfseries\centering}
+  {}{0pt}{}
+
+% Gaps copied from the Word template (baseline to baseline, in bp):
+%   chapter title to first body line    : 54.5
+%   last body line to next section title: 53.5
+%   subsection titles                   : no extra space
+\titlespacing*{\chapter}{0pt}{-8.6bp}{27bp}
+
+\titleformat{\section}[block]
+  {\normalfont\fontsize{12pt}{15pt}\selectfont\bfseries}
+  {\thesection\hspace{0.5em}}{0pt}{}
+\titlespacing*{\section}{0pt}{25.05bp}{0pt}
+
+\titleformat{\subsection}[block]
+  {\normalfont\fontsize{12pt}{15pt}\selectfont\bfseries}
+  {\thesubsection\hspace{0.5em}}{0pt}{}
+\titlespacing*{\subsection}{0pt}{0.05bp}{0pt}
+
+\titleformat{\subsubsection}[block]
+  {\normalfont\fontsize{12pt}{15pt}\selectfont\bfseries\itshape}
+  {\thesubsubsection\hspace{0.5em}}{0pt}{}
+\titlespacing*{\subsubsection}{0pt}{0.05bp}{0pt}
+
+% By default the 'report' class numbers headings only down to \subsection.
+% These two lines also number sub-subsections and list them in the Table
+% of Contents.
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+
+% -------------------------------------------------------------------------
+% 6. Table of Contents, List of Figures, List of Tables
+% Dotted lines join each title to its page number.
+% -------------------------------------------------------------------------
+\usepackage{tocloft}
+
+\renewcommand{\contentsname}{Table of Contents}
+\renewcommand{\cfttoctitlefont}{\hfill\normalfont\fontsize{14pt}{18pt}\selectfont\bfseries}
+\renewcommand{\cftaftertoctitle}{\hfill}
+
+\renewcommand{\listfigurename}{List of Figures}
+\renewcommand{\cftloftitlefont}{\hfill\normalfont\fontsize{14pt}{18pt}\selectfont\bfseries}
+\renewcommand{\cftafterloftitle}{\hfill}
+
+\renewcommand{\listtablename}{List of Tables}
+\renewcommand{\cftlottitlefont}{\hfill\normalfont\fontsize{14pt}{18pt}\selectfont\bfseries}
+\renewcommand{\cftafterlottitle}{\hfill}
+
+% Dotted lines for chapters
+\renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}}
+\renewcommand{\cftchappagefont}{\normalfont}
+\renewcommand{\cftchapfont}{\normalfont\bfseries}
+
+% Words printed before the numbers
+\renewcommand{\cftchappresnum}{Chapter }
+\renewcommand{\cftchapaftersnum}{.}
+\setlength{\cftchapnumwidth}{5.6em}
+
+\renewcommand{\cftfigpresnum}{Figure }
+\renewcommand{\cftfigaftersnum}{}
+\setlength{\cftfignumwidth}{5.2em}
+
+\renewcommand{\cfttabpresnum}{Table }
+\renewcommand{\cfttabaftersnum}{}
+\setlength{\cfttabnumwidth}{5.0em}
+
+\setlength{\cftbeforetoctitleskip}{18pt}
+\setlength{\cftaftertoctitleskip}{18pt}
+\setlength{\cftbeforeloftitleskip}{18pt}
+\setlength{\cftafterloftitleskip}{18pt}
+\setlength{\cftbeforelottitleskip}{18pt}
+\setlength{\cftafterlottitleskip}{18pt}
+
+% -------------------------------------------------------------------------
+% 7. Captions for figures and tables
+% Centered, full 12 pt size. Figure caption below the figure, table caption
+% above the table.
+% -------------------------------------------------------------------------
+\usepackage{caption}
+\usepackage{subcaption}
+
+% As in the Word template: plain (not bold) label and one space after the
+% number, e.g. "Figure 3.1 Example Figure Title." Figure captions use the
+% body line spacing; table captions are single-spaced.
+\captionsetup{
+  font={normalsize},
+  labelfont={normalfont},
+  labelsep=space,
+  justification=centering
+}
+% Figure caption: below the figure, 6 pt gap.
+\captionsetup[figure]{font={normalsize,stretch=\bodyStretchFactor},skip=6pt}
+% Table caption: above the table, 12 pt gap, single-spaced.
+\captionsetup[table]{font={normalsize,stretch=1.0},skip=12pt}
+
+% -------------------------------------------------------------------------
+% 8. Table and graphics packages
+% Pictures, tables (including tables that continue on the next page),
+% lists and maths.
+% -------------------------------------------------------------------------
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{xltabular}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{enumitem}
+% The list layout comes from \bodytextmetrics (section 3), so a plain
+% \begin{enumerate} or \begin{itemize} in a chapter needs no options.
+\usepackage{pdfpages}
+\usepackage{amsmath,amssymb}
+
+% -------------------------------------------------------------------------
+% 9. Citations and links (IEEE style)
+% -------------------------------------------------------------------------
+\usepackage{cite}
+\renewcommand{\bibname}{References}
+\usepackage[pdfpagelabels=true,plainpages=false]{hyperref}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=black,
+  citecolor=black,
+  urlcolor=black,
+  pdfborder={0 0 0}
+}

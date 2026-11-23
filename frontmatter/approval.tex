@@ -1,0 +1,52 @@
+% =========================================================================
+% Certificate of Approval (Page ii)
+%
+% Student Guide:
+% - Nothing to type here. Names, designations, title and semester come from
+%   'thesis-config.tex'.
+% - Only the thesis title may change in height. Room is kept for a title of up
+%   to 4 lines. Every other line is locked in place, and the department name
+%   and semester sit exactly where they do on the cover.
+% =========================================================================
+
+\clearpage
+\phantomsection
+\addcontentsline{toc}{chapter}{Certificate of Approval}
+
+\begin{onehalfspace}
+
+% Each block below is a box of fixed height. The number is its height in bp,
+% which is the distance down to the top of the next block.
+
+% Thesis title (18 pt bold). Room for up to 4 lines.
+\fixedtitleblock{127.5}
+
+% Authors (14 pt)
+\fixedblock{37.5}{{\fontsize{14pt}{18pt}\selectfont\noindent\firstlinestrut
+  \authorA\ and \authorB\par}}
+
+% Degree statement (12 pt)
+\fixedblock{51.5}{{\fontsize{12pt}{16pt}\selectfont\noindent\firstlinestrut
+  \thesisSubtitle\par}}
+
+% Examination statement (12 pt italic)
+\fixedblock{75}{{\fontsize{12pt}{16pt}\selectfont\itshape\noindent\firstlinestrut
+  The thesis has been examined and approved,\par}}
+
+% Signatures: the line sits close above each name, so the space above the
+% line is free for signing.
+\fixedsignatureblock{98.5}{\deanChairName}{\deanChairDesignation}
+\fixedsignatureblock{98.5}{\coSupervisorName}{\coSupervisorDesignation}
+\fixedsignatureblock{79.5}{\supervisorName}{\supervisorDesignation}
+
+% Department and university names (12 pt), same position as on the cover
+\fixedblock{97.2}{{\fontsize{12pt}{16pt}\selectfont\noindent\firstlinestrut
+  \deptName\par
+  \schoolName\par
+  \univName\par}}
+
+% Semester (12 pt), same position as on the cover
+\fixedblock{20}{{\fontsize{12pt}{16pt}\selectfont\noindent\firstlinestrut
+  \submissionSemester\par}}
+
+\end{onehalfspace}

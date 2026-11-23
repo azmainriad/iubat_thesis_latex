@@ -1,0 +1,43 @@
+% =========================================================================
+% Appendix B: Plagiarism Report
+%
+% Student Guide:
+% - IUBAT requires a similarity index of less than 25%.
+% - Save your Turnitin or iThenticate report PDF in the 'figures/' folder.
+% - Then delete the placeholder box below and remove the % from the
+%   \includepdf line at the bottom of this file.
+% =========================================================================
+
+\chapter{Plagiarism Report}
+\label{ch:appendix-plagiarism}
+
+% \chapter above already prints the title "Appendix B. Plagiarism Report",
+% so only the sub-caption is added here.
+\begin{center}
+  {\fontsize{12pt}{16pt}\selectfont (Plagiarism should be less than 25\%)\par}
+  \vspace{12pt}
+  {\fontsize{12pt}{16pt}\selectfont\itshape Attach the proof here.\par}
+\end{center}
+
+\vspace{0.4in}
+
+\begin{center}
+  \fbox{%
+    \parbox[c][5.0in][c]{0.88\textwidth}{%
+      \centering
+      \textbf{[ Official Plagiarism Originality Report Attachment ]}\par\vspace{16pt}
+      \small
+      Acceptable similarity index: $< 25\%$ as per IUBAT guidelines.\par\vspace{16pt}
+      To embed your official scanned or exported Turnitin / iThenticate report PDF:\par\vspace{8pt}
+      \begin{enumerate}[label=\arabic*.,align=left,leftmargin=24pt,labelwidth=16pt,labelsep=8pt,itemsep=4pt]
+        \item Save your official PDF report inside the \texttt{figures/} folder (e.g., \texttt{figures/plagiarism-report.pdf}).
+        \item In this file (\texttt{appendices/appendix-plagiarism.tex}), comment out this placeholder box and uncomment the \texttt{\textbackslash includepdf} command:
+      \end{enumerate}
+      \vspace{14pt}
+      {\scriptsize\texttt{\textbackslash includepdf[pages=-,pagecommand=\{\textbackslash thispagestyle\{plain\}\}]\{figures/plagiarism-report.pdf\}}}
+    }%
+  }
+\end{center}
+
+% Remove the % at the start of the next line to embed your PDF report:
+% \includepdf[pages=-,pagecommand={\thispagestyle{plain}}]{figures/plagiarism-report.pdf}

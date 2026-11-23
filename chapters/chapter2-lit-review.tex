@@ -1,0 +1,250 @@
+% =========================================================================
+% Chapter 2: Literature Review
+%
+% Student Guide:
+% - Reviews and compares existing research on your topic.
+% - Table 2.1 answers common questions about this chapter.
+% - Tables 2.2 and 2.3 show IEEE citation and reference examples.
+% - To add a source, put it in 'references.bib' and cite it with \cite{key}.
+% =========================================================================
+
+\chapter{Literature Review}
+\label{ch:lit-review}
+
+The literature review chapter provides the intellectual foundation for your thesis by critically examining existing research and situating your study within the broader academic context. It should not merely summarize prior work but instead synthesize, compare, and evaluate contributions to highlight gaps and justify your research direction \cite{hawaii2023}, \cite{cmu2022}, \cite{harvard2023}.
+
+The opening section should explain the purpose of the literature review and how it supports your thesis. Briefly outline the scope of the review, the criteria used for selecting sources, and the organization of the chapter. This helps readers understand the approach you have taken in analyzing prior work.
+
+Provide a broad overview of the field of Computer Science and Engineering relevant to your study. Discuss historical developments, major milestones, and current trends that shaped the research area. This section establishes the context for the more detailed review that follows. Organize the literature either thematically (by topic, method, or perspective) or chronologically (by time).
+
+Move beyond description by evaluating the strengths, weaknesses, and contributions of existing studies. Compare methodologies, datasets, and results, and highlight areas of consensus as well as ongoing debates. This demonstrates your ability to critically engage with the literature rather than simply report it.
+
+Explicitly point out what is missing in the literature. Show how these gaps connect to your research problem and justify the need for your study. This subsection should lead naturally into your research objectives and questions.
+
+If applicable, present the theories, models, or frameworks that underpin your research. Explain how these frameworks guide your methodology and analysis. For example, in machine learning studies, you might discuss the theoretical basis for supervised versus unsupervised approaches.
+
+Define the boundaries of your literature review. Specify what types of studies, timeframes, or methodologies are included, and acknowledge what is excluded. For instance, you may focus only on peer-reviewed journal articles from the last decade or exclude purely theoretical models. This transparency strengthens the credibility of your review.
+
+Explain how the review contributes to your thesis. Highlight its role in advancing understanding of the topic, identifying gaps for future research, and strengthening the rationale for your study. This section should make clear why the literature review is essential to your work.
+
+% -------------------------------------------------------------------------
+% Table 2.1: Literature review FAQ
+% xltabular lets a long table continue on the next page, repeating its header.
+% -------------------------------------------------------------------------
+\begin{xltabular}{\textwidth}{>{\bfseries\raggedright\arraybackslash}p{0.28\textwidth} >{\raggedright\arraybackslash}X}
+  \caption{An example to understand how to prepare the literature review chapter.} \label{tab:lit-faq} \\
+  \toprule
+  Student's Question & Sample Answer \\
+  \midrule
+  \endfirsthead
+  \caption[]{An example to understand how to prepare the literature review chapter (Continued).} \\
+  \toprule
+  Student's Question & Sample Answer \\
+  \midrule
+  \endhead
+  \bottomrule
+  \endfoot
+
+  What is it? & 
+  The literature review chapter provides the intellectual foundation for your thesis by critically examining existing research and situating your study within the broader academic context. It should not merely summarize prior work but instead synthesize, compare, and evaluate contributions to highlight gaps and justify your research direction \cite{hawaii2023}, \cite{cmu2022}, \cite{harvard2023}. \\
+  \midrule
+  
+  What is its purpose? & 
+  It explains the background needed to understand your study, demonstrates familiarity with the topic, and shows how your research builds upon or challenges existing work. \\
+  \midrule
+
+  What do I need to include? & 
+  A broad overview of the field of Computer Science and Engineering relevant to your study, historical developments, current trends, critical evaluation of existing studies, theoretical frameworks (if applicable), and clear identification of research gaps. \\
+  \midrule
+
+  How do I organize it? & 
+  Begin with an opening section that explains the purpose of the review, its scope, and source selection criteria. Organize the literature either thematically (by topic, method, or perspective) or chronologically (by time). Conclude with a summary linking the review to your objectives. \\
+  \midrule
+
+  What referencing system should I use? & 
+  You must follow IEEE Referencing Style for in-text citations and the reference list. \\
+  \midrule
+
+  How do I refer to other authors? & 
+  Use IEEE in-text citations (e.g., \cite{hawaii2023}, \cite{cmu2022}) within your thesis report. Full reference details must appear in the References section at the end. \\
+  \midrule
+
+  How long should it be? & 
+  As a rough guide, the literature review should be around 20\% of the whole thesis report (roughly 6--10 pages for an undergraduate thesis), but focus on quality of synthesis rather than page count. \\
+  \midrule
+
+  What am I supposed to do in my literature review? & 
+  You are expected to show that you can recognize relevant and important research within your field, understand and critically analyze arguments, methodologies, and findings, synthesize ideas from multiple sources rather than summarizing one by one, and clearly identify gaps your thesis will address. \\
+\end{xltabular}
+
+Some instructions for using this LaTeX template are discussed below:
+
+\section{Section Title}
+\label{sec:section-title}
+
+Front-part sections, body-part (chapter number and title) sections, and end-part (References) should be formatted using the \texttt{\textbackslash chapter\{...\}} command. Section titles will automatically be included in the Table of Contents.
+
+\section{B-Head Style}
+\label{sec:b-head}
+
+The B-Head style is implemented in LaTeX using the \texttt{\textbackslash section\{...\}} command as a header for a subsection within a thesis chapter. For example, this subsection title is ``B-Head Style.'' Note: When starting a new chapter, there should always be introductory text before the first use of a section. After a section heading, standard paragraphs are automatically indented.
+
+Sections will automatically be added to the Table of Contents, appearing directly below the chapter title each time you compile your document.
+
+\section{C-Head Style and Accompanying Paragraph}
+\label{sec:c-head}
+
+The C-Head style is implemented in LaTeX using the \texttt{\textbackslash subsection\{...\}} command for a sub-subsection within a section of a thesis chapter. C-Heads will automatically be added to the Table of Contents, appearing directly below the section title.
+
+\subsection{Body Text with C-Head}
+\label{sec:c-head-body}
+
+This is a C-Head and its accompanying paragraph. Note: There should always be introductory text for the section before the first use of a subsection.
+
+\section{Numbered List Style}
+\label{sec:numbered-list}
+
+To create a numbered list in LaTeX, use the \texttt{enumerate} environment:
+\begin{enumerate}
+  \item This is the first numbered list item.
+  \item To add a new list item, use the \texttt{\textbackslash item} command.
+  \item Numbering advances automatically and can be nested.
+\end{enumerate}
+
+\section{Bulleted List Style}
+\label{sec:bulleted-list}
+
+To create a bulleted list in LaTeX, use the \texttt{itemize} environment:
+\begin{itemize}
+  \item This is the bulleted list style.
+  \item To add a list item, use the \texttt{\textbackslash item} command.
+  \item Lists terminate cleanly when the environment closes.
+\end{itemize}
+
+\section{Referencing}
+\label{sec:referencing}
+
+Referencing is the method used to ensure that other research influences are recognized within your practicum report. Correct referencing helps ensure that you avoid being accused of plagiarism. Referencing also ensures that you can demonstrate which sources you have used and how your ideas build upon the research of others. IEEE reference style is required to be used for preparing your practicum report. Your report will be assessed by the supervisor and practicum committee for ensuring the quality of practicum report referencing. IEEE Referencing includes two main parts:
+\begin{itemize}
+  \item Citation within the text of your practicum report (Reference in Text)
+  \item List of references at the end of your practicum report (Reference List)
+\end{itemize}
+
+\subsection{Referencing in Text}
+\label{sec:ref-in-text}
+
+Use sequential numbers in square brackets at the end of the line, but before your punctuation. Use that same number if you are citing the same resource later on in your paper.
+
+Bayesian Network is a technique that can be used in safety analysis \cite{leicester2023}. Science writing generally doesn't include direct quotations from your sources.
+
+References need not be cited in the text. When they are, they appear on the line, in square brackets, inside the punctuation. Grammatically, they may be treated as if they were nouns or footnote numbers, e.g.: According to \cite{cmu2022}; as demonstrated in \cite{hawaii2023}; as shown by Brown \cite{harvard2023}, \cite{creswell2018}; as mentioned earlier \cite{bera2018}, \cite{purdue2023}, \cite{manchester2022}, \cite{kumar2019}, \cite{murray2002}, \cite{lester2015}, \cite{bowen1992}; Smith \cite{harvard2023} and Brown and Jones \cite{creswell2018}; Wood et al. \cite{saunders2019}.
+
+% -------------------------------------------------------------------------
+% Table 2.2: In-text citation styles
+% A short table kept in one piece (a floating table).
+% -------------------------------------------------------------------------
+\begin{table}[htbp]
+  \centering
+  \caption{In Text Citation Style.}
+  \label{tab:in-text-citation}
+  \begin{tabularx}{\textwidth}{>{\bfseries\raggedright\arraybackslash}p{0.27\textwidth} >{\raggedright\arraybackslash}p{0.36\textwidth} >{\raggedright\arraybackslash}X}
+    \toprule
+    Citation Style & Example in Text & Notes \\
+    \midrule
+    Single reference & According to \cite{leicester2023}. & Reference number appears in square brackets, and inside punctuation. \\
+    \midrule
+    Sequential references & As mentioned earlier \cite{hawaii2023}, \cite{harvard2023}, \cite{creswell2018}, \cite{bera2018}, \cite{purdue2023}, \cite{kumar2019}. & Multiple references are listed together, and separated by commas. \\
+    \midrule
+    Non-sequential references & As demonstrated in \cite{hawaii2023}; as shown by Brown \cite{harvard2023}, \cite{creswell2018}. & Different references can be cited separately in the same sentence. \\
+    \midrule
+    Author with reference & Smith \cite{harvard2023} and Brown and Jones \cite{creswell2018}. & Author names can be combined with reference numbers. \\
+    \midrule
+    Group of authors & Wood et al. \cite{purdue2023}. & ``et al.'' is used for multiple authors (three or more authors), followed by the reference number. \\
+    \midrule
+    Treated as noun/footnote & As shown by Brown \cite{harvard2023}, \cite{creswell2018}. & Reference numbers act like footnotes or nouns in grammar. \\
+    \midrule
+    \multicolumn{3}{>{\raggedright\arraybackslash}p{\dimexpr\textwidth-2\tabcolsep\relax}}{%
+      \small\textbf{How to Use \texttt{references.bib} (IEEE Style Guide for Students):}\par\vspace{2pt}
+      \textbullet\ \textbf{Adding References:} Save all your bibliographic entries in Bib\TeX\ format inside the \texttt{references.bib} file located in the root directory.\par
+      \textbullet\ \textbf{Single Citation:} Use \texttt{\textbackslash cite\{key\}} in your text (e.g., \texttt{\textbackslash cite\{leicester2023\}} produces \cite{leicester2023}). Place the citation before the punctuation mark.\par
+      \textbullet\ \textbf{Multiple References:} In IEEE style, multiple citations must appear with separate brackets separated by commas, such as \texttt{\string\cite\{key1\}}, \texttt{\string\cite\{key2\}} (e.g., \texttt{\string\cite\{harvard2023\}}, \texttt{\string\cite\{creswell2018\}} produces \cite{harvard2023}, \cite{creswell2018}), rather than grouped ranges.%
+    } \\
+    \bottomrule
+  \end{tabularx}
+\end{table}
+
+\subsection{The Reference List}
+\label{sec:the-ref-list}
+
+A reference list includes details of the sources cited in your paper. It starts on a separate page at the end of your practicum report and is titled References. Each source included in the reference list must have been cited in your paper. The following points list the style:
+\begin{itemize}
+  \item Reference numbers are set flush left and form a column of their own, hanging out beyond the body of the reference. The reference numbers are on the line, enclosed in square brackets.
+  \item In all references, the given name of the author or editor is abbreviated to the initial only and precedes the last name. Do not use commas around Jr., Sr., and III in names: Michael Smith Jr.; Ray Barnett Sr.; Lucas Molignaro III.
+  \item IEEE publications must list names of all authors, up to six names. If there are more than six names listed, use the primary author's name followed by ``et al.'' For non-IEEE publications, ``et al.'' may be used if additional names are not provided.
+  \item All references, except those ending with URLs, will end with a period, including those with a DOI. However, if a reference contains both a DOI or accessed date, as well as a URL, the DOI or accessed date will be placed first, followed by a period, and then the URL.
+  \item Note that when citing IEEE Transactions, if the issue number or month is not available, research IEEE Xplore to see if the publication carries these details. Note that not all IEEE publications include issue numbers and months.
+  \item Note that early access articles should use the ``Date of Publication.''
+  \item Articles published within a volume should use the volume and issue publication date.
+  \item All references must include a date that comprises at least the year of publication (or year of the accessed date if applicable). If no date is provided, use the abbreviation ``(n.d.)'' in the same position where the date would normally be displayed in the reference, preceded and followed by periods, e.g.:\newline
+    \textit{BAR50 Series Infineon PIN Diode Datasheet. (n.d.). [Online]. Available: \url{http://www.infineon.com}}
+  \item For any reference that cites two months for the same issue, the two months should be separated by a slash (e.g., Jul./Aug.), followed by the year of publication.
+  \item References may not include all information; please obtain and include relevant information.
+  \item Do not combine references. There must be only one reference with each number.
+  \item If there is a URL included with the print reference, it can be included at the end of the reference.
+\end{itemize}
+
+% -------------------------------------------------------------------------
+% Table 2.3: IEEE referencing quick guide
+% Another xltabular table that continues on the next page.
+% -------------------------------------------------------------------------
+\begin{xltabular}{\textwidth}{>{\bfseries\raggedright\arraybackslash}p{0.24\textwidth} >{\raggedright\arraybackslash}X}
+  \caption{IEEE Referencing Style quick guide.} \label{tab:ieee-style-guide} \\
+  \toprule
+  Source Type & IEEE Referencing Format and Guidelines \\
+  \midrule
+  \endfirsthead
+  \caption[]{IEEE Referencing Style quick guide (Continued).} \\
+  \toprule
+  Source Type & IEEE Referencing Format and Guidelines \\
+  \midrule
+  \endhead
+  \bottomrule
+  \endfoot
+
+  Journal Article & 
+  \textbf{Format for Online Journal Article with DOI:}\newline
+  {[}\#] First Author's initial(s). Last name, ``Title of article in sentence case,'' \textit{Abbr. Title of Periodical}, vol.~x, no.~x, pp.~xxx--xxx, Abbr. Month, Year, doi: DOI.\newline
+  \textit{Example:} J.~Smith and R.~Johnson, ``Edge computing in cybersecurity,'' \textit{IEEE Trans. Ind. Inform.}, vol.~15, no.~4, pp.~210--222, Apr.~2020, doi:10.1109/TII.2020.123456.\par\vspace{6pt}
+  \textbf{Format for Print Journal Article (no DOI):}\newline
+  {[}\#] Author(s) initial(s). Surname(s), ``Title of article in sentence case,'' \textit{Abbr. Title of Periodical}, vol.~x, no.~x, pp.~xxx--xxx, Abbr. Month, Year.\newline
+  \textit{Example:} I.~Thompson, ``Women and feminism in technical communication,'' \textit{J. Bus. Tech. Commun.}, vol.~13, no.~2, pp.~154--178, Apr.~1999. \\
+  \midrule
+
+  Conference Paper & 
+  \textbf{Format for Online Published Conference Paper (with DOI):}\newline
+  {[}\#] Author(s) initial(s). Surname(s), ``Title of paper in sentence case,'' in \textit{Abbr. Title of Conf.}, Month Year, pp.~xxx--xxx, doi: DOI.\newline
+  \textit{Example:} G.~R.~Faulhaber, ``Design of service systems with priority reservation,'' in \textit{Conf. Rec. 1995 IEEE Int. Conf. Commun.}, Jun.~1995, pp.~3--8, doi:10.1109/ICC.1995.123456.\par\vspace{6pt}
+  \textbf{Format for Print-Published Conference Paper (no DOI):}\newline
+  {[}\#] Author(s) initial(s). Surname(s), ``Title of paper in sentence case,'' in \textit{Abbr. Title of Conf.}, City, State, Country: Publisher, Year, pp.~xxx--xxx.\newline
+  \textit{Example:} I.~Thompson, ``Women and feminism in technical communication,'' in \textit{Proc. IEEE Int. Conf. Prof. Commun.}, Boston, MA, USA: IEEE, 1999, pp.~154--178. \\
+  \midrule
+
+  Book & 
+  \textbf{Online Book (with DOI or URL):}\newline
+  {[}\#] A.~Author, B.~Author and C.~Author, \textit{Book Title}, xth ed. City, State or Country: Publisher, Year, doi: DOI.\newline
+  \textit{Example:} M.~S.~MacNealy and J.~H.~Watt, \textit{Strategies for Empirical Research in Writing}, 2nd ed. Boston, MA, USA: Allyn and Bacon, 1999, doi:10.4324/9781315853178.\par\vspace{6pt}
+  \textbf{Print Book (no DOI):}\newline
+  {[}\#] Author's initial(s). Last name, \textit{Book Title}, xth ed. City, State or Country: Publisher, Year.\newline
+  \textit{Example:} M.~S.~MacNealy, \textit{Strategies for Empirical Research in Writing}, Boston, MA, USA: Allyn and Bacon, 1999. \\
+  \midrule
+
+  Website & 
+  \textbf{Format for Online Documentation or Website:}\newline
+  {[}\#] Author(s) Initial(s). Surname(s) (or Name of Organization), ``Title of page in sentence case,'' Website Name, [Online]. Available: URL (Accessed Abbrev. Month Day, Year).\newline
+  \textit{Example (Organization as Author):} IEEE, ``Author guidelines for conference papers,'' IEEE, [Online]. Available: \url{https://www.ieee.org/conferences/publishing/templates.html} (accessed Dec.~4, 2025).\newline
+  \textit{Example (Individual Author):} J.~Doe, ``Introduction to quantum computing,'' Quantum Research Hub, [Online]. Available: \url{https://www.quantumresearchhub.org/intro} (accessed Dec.~4, 2025). \\
+  \midrule
+
+  Other Sources & 
+  If your reference source is different or your reference scenario is not covered in this table, check the official IEEE reference guide: \url{https://ieeeauthorcenter.ieee.org/}. \\
+\end{xltabular}

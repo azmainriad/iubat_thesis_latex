@@ -1,0 +1,132 @@
+% =========================================================================
+% Appendix A: BAETE KPA Justification Form
+%
+% Student Guide:
+% - This is the official BAETE form. For each item (K1, K2, K7; P1 to P7;
+%   A1 to A5) explain how your thesis meets it, or write --- if it does not.
+% - Course code, title, semester, names and supervisor are filled in from
+%   'thesis-config.tex'. Change them there, not here.
+% - Your supervisor writes the remark in the Comments line at the end.
+% =========================================================================
+
+% 1.5 line spacing is used for this form only. Pages after it keep the
+% normal body spacing.
+\begin{onehalfspace}
+
+% The three tables below use xltabular, so a long table continues on the
+% next page (like a Word table) instead of running off the page. The two
+% lengths below remove the extra space it adds above and below each table.
+\setlength{\LTpre}{0pt}
+\setlength{\LTpost}{0pt}
+
+\clearpage
+\refstepcounter{chapter}
+\makeatletter
+\def\@currentlabelname{KPA Justification Form}
+\makeatother
+\phantomsection
+\addcontentsline{toc}{chapter}{\protect\numberline{\thechapter}KPA Justification Form}
+\label{ch:appendix-kpa}
+
+% IUBAT banner at the top of the form
+\vspace*{-0.55in}
+\noindent
+\centerline{\includegraphics[width=1.06\textwidth]{figures/essentials/iubat_heading.jpg}}
+\vspace{8pt}
+
+% Form title and department heading
+\begin{center}
+  {\fontsize{14pt}{18pt}\selectfont\bfseries Appendix \thechapter.\ KPA Justification Form\par}
+  \vspace{8pt}
+  {\fontsize{13pt}{16pt}\selectfont\bfseries \deptName\par}
+  {\fontsize{12pt}{15pt}\selectfont\bfseries Bachelor of Computer Science and Engineering (BCSE)\par}
+  \vspace{4pt}
+  {\fontsize{11pt}{14pt}\selectfont\bfseries Thesis along with Knowledge Profile (K),\\ Complex Engineering Problem (P), and Complex Engineering Activities (A)\par}
+\end{center}
+
+\vspace{10pt}
+
+% These details come from 'thesis-config.tex'. Nothing to retype.
+\noindent
+\textbf{Course Code and Title:} \courseCodeTitle\par\vspace{4pt}
+\noindent
+\textbf{Title of the Thesis:} \thesisTitle\par\vspace{4pt}
+\noindent
+\textbf{Semester:} \submissionSemester\par\vspace{4pt}
+\noindent
+\textbf{Student(s) Name and ID:}\par
+\authorA\ (ID: \authorAID)\par
+\ifsecondauthor{\authorB\ (ID: \authorBID)\par}{}\vspace{4pt}
+\noindent
+\textbf{Supervisor Name:} \supervisorName, \supervisorDesignation, \deptName
+
+\vspace{12pt}
+
+% -------------------------------------------------------------------------
+% Table 1: Knowledge Profile (K1, K2, and K7)
+% -------------------------------------------------------------------------
+\noindent
+\textbf{How the Knowledge Profile K's (K1, K2, and K7) are addressed (which are not part P's)?}\par\vspace{4pt}
+\begin{xltabular}{\textwidth}{|>{\raggedright\arraybackslash}p{3.5cm}|>{\raggedright\arraybackslash}X|}
+  \hline
+  \textbf{Knowledge Profile K's} & \textbf{Addressed (Explain how it was addressed?) or ---} \\
+  \hline
+  \endhead
+  \textbf{K1} & Explain how K1 (Natural Sciences) is addressed, or write ``---'' if not addressed. \\
+  \hline
+  \textbf{K2} & Explain how K2 (Mathematics) is addressed, or write ``---'' if not addressed. \\
+  \hline
+  \textbf{K7} & Explain how K7 (Comprehension / Role of Engineering in Society) is addressed, or write ``---'' if not addressed. \\
+  \hline
+\end{xltabular}
+
+\clearpage
+
+% -------------------------------------------------------------------------
+% Table 2: Complex Engineering Problems (P1 to P7)
+% -------------------------------------------------------------------------
+\noindent
+\textbf{Which P's are addressed (Requirements: P1 is must, and some or all P's from P2 to P7)?}\par\vspace{4pt}
+\begin{xltabular}{\textwidth}{|>{\raggedright\arraybackslash}p{5.5cm}|c|>{\raggedright\arraybackslash}X|}
+  \hline
+  \textbf{Name of CEP (P's)} & \multicolumn{2}{>{\centering\arraybackslash}X|}{\textbf{Addressed (Explain how it was addressed?) or ---}} \\
+  \hline
+  \endhead
+  \multirow{5}{=}{\textbf{P1: Depth of Knowledge}\newline{\small (Required one or more K from K3, K4, K5, K6, or K8)}} 
+    & \textbf{K3} & Explain how K3 (Engineering Fundamentals) is addressed, or write ``---''. \\* \cline{2-3}
+    & \textbf{K4} & Explain how K4 (Engineering Specialist Knowledge) is addressed, or write ``---''. \\* \cline{2-3}
+    & \textbf{K5} & Explain how K5 (Engineering Design) is addressed, or write ``---''. \\* \cline{2-3}
+    & \textbf{K6} & Explain how K6 (Engineering Practice) is addressed, or write ``---''. \\* \cline{2-3}
+    & \textbf{K8} & Explain how K8 (Research Literature) is addressed, or write ``---''. \\ \hline
+  \multicolumn{2}{|l|}{\textbf{P2: Conflicting Requirements}} & Explain how conflicting technical and engineering issues are addressed, or write ``---''. \\ \hline
+  \multicolumn{2}{|l|}{\textbf{P3: Depth of Analysis}} & Explain depth of analysis and abstract modeling required, or write ``---''. \\ \hline
+  \multicolumn{2}{|l|}{\textbf{P4: Familiarity of Issues}} & Explain infrequently encountered issues involved, or write ``---''. \\ \hline
+  \multicolumn{2}{|l|}{\textbf{P5: Extent of Applicable Codes}} & Explain applicable codes, standards, or problems outside standard codes, or write ``---''. \\ \hline
+  \multicolumn{2}{|l|}{\textbf{P6: Extent of Stakeholders}} & Explain diverse groups of stakeholders with varying needs involved, or write ``---''. \\ \hline
+  \multicolumn{2}{|l|}{\textbf{P7: Interdependence}} & Explain high-level interdependence of component parts or sub-problems, or write ``---''. \\ \hline
+\end{xltabular}
+
+\clearpage
+
+% -------------------------------------------------------------------------
+% Table 3: Complex Engineering Activities (A1 to A5)
+% -------------------------------------------------------------------------
+\noindent
+\textbf{Which A's are addressed (Requirements: Some or all A1 to A5)? [Only Relates to PO(j)]}\par\vspace{4pt}
+\begin{xltabular}{\textwidth}{|>{\raggedright\arraybackslash}p{6.2cm}|>{\raggedright\arraybackslash}X|}
+  \hline
+  \textbf{Name of CEA (A's)} & \textbf{Addressed (Explain how it was addressed?) or ---} \\
+  \hline
+  \endhead
+  \textbf{A1: Range of Resources} & Explain the diverse resources (people, money, equipment, materials, technologies) involved, or write ``---''. \\ \hline
+  \textbf{A2: Level of Interaction} & Explain the resolution of significant problems arising from interactions, or write ``---''. \\ \hline
+  \textbf{A3: Innovation} & Explain the creative, innovative use of engineering principles and research, or write ``---''. \\ \hline
+  \textbf{A4: Consequences to Society and Environment} & Explain the consequences to society, health, safety, and the environment, or write ``---''. \\ \hline
+  \textbf{A5: Familiarity} & Explain how the work extends beyond previous experiences by applying principles, or write ``---''. \\ \hline
+\end{xltabular}
+
+\vspace{14pt}
+\noindent
+\textbf{Comments:} Write comment here.
+
+\end{onehalfspace}

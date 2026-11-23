@@ -1,0 +1,43 @@
+% =========================================================================
+% Title Page (cover)
+%
+% Student Guide:
+% - Nothing to type here. Everything comes from 'thesis-config.tex'.
+% - Only the thesis title may change in height. All other lines are locked
+%   in place, so the page looks the same for a one-line or a four-line title.
+% =========================================================================
+
+\begin{titlepage}
+\hypersetup{pageanchor=false}
+\thispagestyle{empty}
+\onehalfspacing
+
+% Each block below is a box of fixed height. The number is its height in bp,
+% which is the distance down to the top of the next block.
+
+% Thesis title (18 pt bold). Room for 5 lines here, but the approval page
+% holds 4, so keep your title to 4 lines.
+\fixedtitleblock{196.5}
+
+% Authors (14 pt)
+\fixedblock{136}{{\fontsize{14pt}{18pt}\selectfont\noindent\firstlinestrut
+  \authorA\ and \authorB\par}}
+
+% Degree statement (12 pt)
+\fixedblock{154.5}{{\fontsize{12pt}{16pt}\selectfont\noindent\firstlinestrut
+  \thesisSubtitle\par}}
+
+% Department and university logo
+\fixedblock{81}{\includegraphics[height=1.85cm,keepaspectratio]{figures/essentials/iubat_cse_logo.jpg}\par}
+
+% Department and university names (12 pt)
+\fixedblock{97.2}{{\fontsize{12pt}{16pt}\selectfont\noindent\firstlinestrut
+  \deptName\par
+  \schoolName\par
+  \univName\par}}
+
+% Semester (12 pt)
+\fixedblock{20}{{\fontsize{12pt}{16pt}\selectfont\noindent\firstlinestrut
+  \submissionSemester\par}}
+\end{titlepage}
+\hypersetup{pageanchor=true}
